@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
     private lateinit var firstText: TextView
     private lateinit var secondText: TextView
-
+    private val data  = MyDataClass()
+    private val data2  = data.copy(secondProperty =  "Новое свойство")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,11 +21,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         setOnClickListener()
-        setDataText()
+        setDataText(data2)
+
     }
 
-    private fun setDataText() {
-        val data  = MyDataClass()
+    private fun setDataText(data : MyDataClass) {
+
         firstText.text = data.firstProperty
         secondText.text = data.secondProperty
     }
