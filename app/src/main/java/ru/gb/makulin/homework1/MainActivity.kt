@@ -22,7 +22,18 @@ class MainActivity : AppCompatActivity() {
         initView()
         setOnClickListener()
         setDataText(data2)
+        cyclesTest()
 
+    }
+
+    private fun cyclesTest() {
+        println()
+        CyclesTest().foreachTest()
+        CyclesTest().forTest()
+        CyclesTest().downToTest()
+//        CyclesTest().
+//        CyclesTest().
+//        CyclesTest().
     }
 
     private fun setDataText(data : MyDataClass) {
