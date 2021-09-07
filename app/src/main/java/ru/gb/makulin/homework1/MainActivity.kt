@@ -3,22 +3,37 @@ package ru.gb.makulin.homework1
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var button: Button
+    private lateinit var firstText: TextView
+    private lateinit var secondText: TextView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initButton()
+        initView()
         setOnClickListener()
+        setDataText()
     }
 
-    private fun initButton() {
+    private fun setDataText() {
+        val data  = MyDataClass()
+        firstText.text = data.firstProperty
+        secondText.text = data.secondProperty
+    }
+
+    private fun initView() {
         button = findViewById(R.id.test_button)
+        firstText = findViewById(R.id.text_first)
+        secondText = findViewById(R.id.text_second)
+
     }
 
     private fun setOnClickListener() {
